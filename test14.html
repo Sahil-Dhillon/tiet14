@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TietFourteen</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="t14.PNG" />
+    <style>
+        html,
+        body,
+        div,
+        button,
+        header,
+        footer,
+        section,
+        table,
+        a,
+        nav {
+            cursor: url(https://img.icons8.com/dusk/64/000000/cursor.png), default;
+        }
+        /* width */
+        
+         ::-webkit-scrollbar {
+            width: 10px;
+        }
+        /* Track */
+        
+         ::-webkit-scrollbar-track {
+            background: #c7c7c7;
+        }
+        /* Handle */
+        
+         ::-webkit-scrollbar-thumb {
+            background: rgb(119, 119, 119);
+            border-radius: 1px;
+        }
+        /* Handle on hover */
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: rgb(46, 46, 46);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="text-gray-600 body-font ">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+                <a href="index.html" class="mr-5   hover:text-gray-900">Home</a>
+                <a href="schedule14.html" class="mr-5 hover:text-gray-900">Schedule</a>
+                <a href="" class="mr-5 font-bold hover:text-gray-900">MST's</a>
+                <a href="study14.html" class="mr-5 hover:text-gray-900">Study Material</a>
+                <a href="notice14.html" class="hover:text-gray-900">Notice Board</a>
+            </nav>
+            <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+                <img width="50px" src="/t14.PNG" alt="">
+                <span class="ml-3 text-xl">TIET14</span>
+            </a>
+            <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+                <!-- <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button> -->
+            </div>
+        </div>
+    </header>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <div class="text-center lg:w-2/3 w-full">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Aagye Mst's :[</h1><br>
+
+                <div class="flex justify-center">
+                    <input type="text" id="myInput" name="hero-field" placeholder="Filter your table" class="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-green-200 focus:bg-transparent border border-gray-300 focus:border-green-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+
+            </div>
+            <table class="mt-10 lg:w-2/3 border-collapse border border-green-800 w-full">
+                <thead>
+                    <tr>
+                        <th class="border border-green-600 px-2 ...">Date</th>
+                        <th class="border border-green-600 px-2 ...">Subject</th>
+                        <th class="border border-green-600 px-2 ...">Quiz no.</th>
+                        <th class="border border-green-600 px-2 ...">Syllabus</th>
+                        <th class="border border-green-600 px-2 ...">Link</th>
+
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">4 Jan </td>
+                        <td class="border border-green-600 px-2 ...">Evs</td>
+                        <td class="border border-green-600 px-2 ...">1 Google form MCQ</td>
+                        <td class="border border-green-600 px-2 ...">Water Pollution</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">5 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Mechanics</td>
+                        <td class="border border-green-600 px-2 ...">1</td>
+                        <td class="border border-green-600 px-2 ...">Complete syllabus covered upto Friction. (as given on lms)😟</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">6 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Maths</td>
+                        <td class="border border-green-600 px-2 ...">1</td>
+                        <td class="border border-green-600 px-2 ...">Infinite Seq 8.1 to Alternating Series 8.7</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">7 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Computer</td>
+                        <td class="border border-green-600 px-2 ...">1 MCQ Short_Ans 1</td>
+                        <td class="border border-green-600 px-2 ...">Computers Fundamentals, Algorithms and Programming Languages(Slide set1)</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">8 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Chemistry</td>
+                        <td class="border border-green-600 px-2 ...">1</td>
+                        <td class="border border-green-600 px-2 ...">Atomic Spectroscopy that is FES & AAS</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">11 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Evs</td>
+                        <td class="border border-green-600 px-2 ...">2 Google form MCQ</td>
+                        <td class="border border-green-600 px-2 ...">Solid Waste Management</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">12 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Mechanics</td>
+                        <td class="border border-green-600 px-2 ...">2</td>
+                        <td class="border border-green-600 px-2 ...">Complete syllabus covered upto Friction. (as given on lms)😟</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">14 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Computer</td>
+                        <td class="border border-green-600 px-2 ...">2 MCQ Short_Ans Program</td>
+                        <td class="border border-green-600 px-2 ...">C Language Basics, Sequential and Looping control Structures (Slide set 2 and set 3)</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">15 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Chemistry</td>
+                        <td class="border border-green-600 px-2 ...">2 </td>
+                        <td class="border border-green-600 px-2 ...">UV-Vis Spectroscopy & Beer-Lambert’s Law
+                        </td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">18 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Evs</td>
+                        <td class="border border-green-600 px-2 ...">3 Google form MCQ</td>
+                        <td class="border border-green-600 px-2 ...">Air Pollution</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">19 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Mechanics</td>
+                        <td class="border border-green-600 px-2 ...">3</td>
+                        <td class="border border-green-600 px-2 ...">Complete syllabus covered upto Friction. (as given on lms)😟</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">20 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Maths</td>
+                        <td class="border border-green-600 px-2 ...">2</td>
+                        <td class="border border-green-600 px-2 ...">Power,Taylor,Maclaurin,Error estimation of taylor 8.8 to 8.10 </td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">21 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Computer</td>
+                        <td class="border border-green-600 px-2 ...">3 MCQ Short_Ans Program </td>
+                        <td class="border border-green-600 px-2 ...">Functions(Slide set 4)</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">22 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Chemistry</td>
+                        <td class="border border-green-600 px-2 ...">3</td>
+                        <td class="border border-green-600 px-2 ...">IR Spectroscopy & Polymers</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">27 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Electrical</td>
+                        <td class="border border-green-600 px-2 ...">1</td>
+                        <td class="border border-green-600 px-2 ...">idk 😪 kisiko pta ho toh bta dena</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">28 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Electrical</td>
+                        <td class="border border-green-600 px-2 ...">2</td>
+                        <td class="border border-green-600 px-2 ...">idk 😪</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">29 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Electrical</td>
+                        <td class="border border-green-600 px-2 ...">3</td>
+                        <td class="border border-green-600 px-2 ...">idk 😪</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                    <tr>
+                        <td class="border border-green-600 px-2 ...">30 Jan</td>
+                        <td class="border border-green-600 px-2 ...">Maths</td>
+                        <td class="border border-green-600 px-2 ...">3</td>
+                        <td class="border border-green-600 px-2 ...">Unit 8 full 8.1 to 8.10</td>
+                        <td class="border border-green-600 " style="text-align:center"><a href="404.html"><button class="cursor-not-allowed  text-white bg-indigo-500 border-0 py-1 px-5 focus:outline-none  hover:bg-indigo-600 text-lg">Click Here</button></a></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <footer class="text-gray-600 body-font bg-gray-800">
+        <div class="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <img width="60px" src="/t14.PNG" alt="">
+
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© made with ❤
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a href="https://www.instagram.com/zsahildhillon" target="_blank" class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a href="https://github.com/Sahil-Dhillon" target="_blank" class="ml-3 text-gray-500 fa fa-github" style="font-size:26px">
+           
+          <!-- <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg> -->
+        </a>
+        <a href="https://wa.me/917082599140" target="_blank" class="ml-3 text-gray-500 fa fa-whatsapp" style="font-size:26px"></a> 
+      </span>
+        </div>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
