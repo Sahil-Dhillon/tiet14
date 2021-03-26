@@ -9,8 +9,9 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="t14.PNG" />
-    <!-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         html,
         body,
@@ -27,7 +28,7 @@
         /* width */
         
          ::-webkit-scrollbar {
-            width: 10px;
+            width: 3px;
         }
         /* Track */
         
@@ -37,13 +38,21 @@
         /* Handle */
         
          ::-webkit-scrollbar-thumb {
-            background: rgb(119, 119, 119);
+            background: rgb(90, 90, 90);
             border-radius: 1px;
         }
         /* Handle on hover */
         
          ::-webkit-scrollbar-thumb:hover {
             background: rgb(46, 46, 46);
+        }
+        
+        .show {
+            display: block!important
+        }
+        
+        .collapse {
+            display: none
         }
     </style>
 </head>
@@ -53,7 +62,7 @@
     <header class="text-gray-600 body-font ">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-                <a href="index.html" class="mr-5  hover:text-gray-900">Home</a>
+                <a href="/" class="mr-5  hover:text-gray-900">Home</a>
                 <a class="mr-5 font-bold  hover:text-gray-900">Schedule</a>
                 <a href="test14.html" class="mr-5 hover:text-gray-900">MST's</a>
                 <a href="study14.html" class="mr-5 hover:text-gray-900">Study Material</a>
@@ -70,179 +79,1205 @@
 
     </header>
 
-    <section class="text-gray-600 body-font">
-        <div id="bgdiv" x-data={show:false} class=" container px-5 py-14 mx-auto">
+    <section class="text-gray-600 body-font ">
+        <div class=" container px-5 py-14 mx-auto">
             <div class="text-center mb-10">
-                <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">The Boring Schedule! </h1>
+                <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-500 mb-4">The Boring Schedule! </h1>
                 <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">` Padhna toh padega hi `</p>
             </div>
-            <!-- <nav class="flex lg:w-1/10  flex-wrap items-center text-base md:ml-auto">
-                <button @click="show=!show" class="flex mr-4 bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 py-3 text-sm focus:outline-none" type="button">
-                COE11  
-                <button @click="show=!show" class="flex mr-4 bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 py-3 text-sm focus:outline-none" type="button">
-                COE12  
-</button>
-                <button @click="show=!show" class="flex mr-4 bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 py-3 text-sm focus:outline-none" type="button">
-                COE13  
-</button>
-                <button @click="show=!show" class="flex mr-4 bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 py-3 text-sm focus:outline-none" type="button">
-                COE14  
-</button>
-                <button @click="show=!show" class="flex mr-4 bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 py-3 text-sm focus:outline-none" type="button">
-                COE15  
-</button>
-                <button @click="show=!show" class="flex mr-4 bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 py-3 text-sm focus:outline-none" type="button">
-                COE16  
-</button>
-                <button @click="show=!show" class="flex mr-4 bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 py-3 text-sm focus:outline-none" type="button">
-                COE17  
-</button>
-                <button @click="show=!show" class="flex mr-4 bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 py-3 text-sm focus:outline-none" type="button">
-                COE18  
-</button>
-                <button @click="show=!show" class="flex mr-4 bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 py-3 text-sm focus:outline-none" type="button">
-                COE19  
-</button>
-                <button @click="show=!show" class="flex mr-4 bg-blue-600 text-gray-200 rounded hover:bg-blue-500 px-4 py-3 text-sm focus:outline-none" type="button">
-                COE20  
-</button>
-            </nav> -->
-            <!-- <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button> -->
-            <!-- x-show="show"  in div -->
-            <div class="flex flex-wrap -m-4 p-1">
-                <div id="demo" class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10">
-                    <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Monday again!</h2>
-                    <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-                        <a href="https://tiet.zoom.us/my/cied2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                            Mech Lecture <br>10:30
-                        </a>
-                        <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                            EE Lecture <br>11:20
-                        </a>
-                        <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+            <!-- group list -->
+            <div id="accordion" class="mb-32 py-12">
+                <div class="mx-auto text-center">
+
+                    <a href="#co11" data-toggle="collapse">
+                        <button class="hover:text-blue-500 transition ease-out duration-700 text-black bg-blue-400 hover:bg-gray-800 hover:transform  hover:scale-110  border-0 rounded py-1 px-4 focus:outline-none text-lg">COE11</button>
+                    </a>
+                    <a href="#co12" data-toggle="collapse">
+                        <button class="hover:text-blue-500 transition ease-out duration-700 text-black bg-blue-400 hover:bg-gray-800 hover:transform  hover:scale-110  border-0 rounded py-1 px-4 focus:outline-none text-lg">COE12</button>
+                    </a>
+                    <a href="#co13" data-toggle="collapse">
+                        <button class="hover:text-blue-500 transition ease-out duration-700 text-black bg-blue-400 hover:bg-gray-800 hover:transform  hover:scale-110  border-0 rounded py-1 px-4 focus:outline-none text-lg">COE13</button>
+                    </a>
+                    <a href="#co14" data-toggle="collapse">
+                        <button class="hover:text-blue-500 transition ease-out duration-700 text-black bg-blue-400 hover:bg-gray-800 hover:transform  hover:scale-110  border-0 rounded py-1 px-4 focus:outline-none text-lg">COE14</button>
+                    </a>
+                    <a href="#co15" data-toggle="collapse">
+                        <button class="hover:text-blue-500 transition ease-out duration-700 text-black bg-blue-400 hover:bg-gray-800 hover:transform  hover:scale-110  border-0 rounded py-1 px-4 focus:outline-none text-lg">COE15</button>
+                    </a>
+
+                    <a href="#co16" data-toggle="collapse">
+                        <button class="hover:text-blue-500 transition ease-out duration-700 text-black bg-blue-400 hover:bg-gray-800 hover:transform  hover:scale-110  border-0 rounded py-1 px-4 focus:outline-none text-lg">COE16</button>
+                    </a>
+
+                    <a href="#co17" data-toggle="collapse">
+                        <button class="hover:text-blue-500 transition ease-out duration-700 text-black bg-blue-400 hover:bg-gray-800 hover:transform  hover:scale-110  border-0 rounded py-1 px-4 focus:outline-none text-lg">COE17</button>
+                    </a>
+
+                    <a href="#co18" data-toggle="collapse">
+                        <button class="hover:text-blue-500 transition ease-out duration-700 text-black bg-blue-400 hover:bg-gray-800 hover:transform  hover:scale-110  border-0 rounded py-1 px-4 focus:outline-none text-lg">COE18</button>
+                    </a>
+
+                    <a href="#co19" data-toggle="collapse">
+                        <button class="hover:text-blue-500 transition ease-out duration-700 text-black bg-blue-400 hover:bg-gray-800 hover:transform  hover:scale-110  border-0 rounded py-1 px-4 focus:outline-none text-lg">COE19</button>
+                    </a>
+
+                    <a href="#co20" data-toggle="collapse">
+                        <button class="hover:text-blue-500 transition ease-out duration-700 text-black bg-blue-400 hover:bg-gray-800 hover:transform  hover:scale-110  border-0 rounded py-1 px-4 focus:outline-none text-lg">COE20</button>
+                    </a>
+                </div>
+
+                <!-- group wise schedule divs -->
+
+                <div id="co11" class="collapse py-10" data-parent="#accordion">
+                    <h2 class="text-2xl font-medium text-center title-font">COE11</h2>
+                    <div class="flex flex-wrap -m-4 p-1">
+
+                        <div id="demo" class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Monday again!</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Mech Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Env Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/8653197433?pwd=bUtTN21raFNleHppQS9mdGdHMUwvQT09" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Tut <br>5:10
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Tuesday (The Worst)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied4" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed17" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Practical <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Wednesday :(</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed13" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
                             Chem Lecture <br>12:10
-                        </a>
-                        <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                            Env Lecture <br>3:30
-                        </a>
-                        <a href="https://tiet.zoom.us/my/tietsom6" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                            Maths Tut <br>4:20
-                        </a>
-                    </nav>
-                </div>
-                <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
-                    <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Tuesday (The Worst)</h2>
-                    <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-                        <a href="https://tiet.zoom.us/my/cied4" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Mech Lecture <br>8:00
-                        </a>
-                        <a href="https://tiet.zoom.us/my/csed17" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Comp Lecture <br>8:50
-                        </a>
-                        <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Maths Lecture <br>9:40
-                        </a>
-                        <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Env Lecture <br>12:10
-                        </a>
-                        <a href="https://tiet.zoom.us/j/6576855191" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    EE Practical <br>1:00
-                        </a>
-                        <a href="https://tiet.zoom.us/j/3414991738" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    EE Tut <br>5:10
-                        </a>
-                    </nav>
-                </div>
-                <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
-                    <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Wednesday :(</h2>
-                    <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-                        <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Env Lecture <br>10:30
-                        </a>
-                        <a href="https://tiet.zoom.us/my/csed13" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Comp Lecture <br>11:20
-                        </a>
-                        <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Chem Lecture <br>12:10
-                        </a>
-                        <a href="https://tiet.zoom.us/my/csed16" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Comp Practical <br>3:30
-                        </a>
-                        <a href="https://tiet.zoom.us/my/scbc2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Chem Tut <br>5:10
-                        </a>
-                    </nav>
-                </div>
-                <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
-                    <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Thursday :)</h2>
-                    <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-                        <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Maths Lecture <br>11:20
-                        </a>
-                        <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Chem Lecture <br>12:10
-                        </a>
-                        <a href="https://tiet.zoom.us/j/9959600890" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    EE Lecture <br>3:30
-                        </a>
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed35" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Practical <br>3:30
+                                </a>
 
-                    </nav>
-                </div>
-                <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
-                    <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Friday :/</h2>
-                    <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-                        <a href="https://tiet.zoom.us/my/csed22" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Comp Lecture <br>8:00
-                        </a>
-                        <a href="https://tiet.zoom.us/my/tietsom6" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Maths Lecture <br>8:50
-                        </a>
-                        <a href="https://tiet.zoom.us/j/3528379760" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    EE Lecture <br>9:40
-                        </a>
-                        <a href="https://tiet.zoom.us/my/scbc4" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Chem Practical <br>1:00
-                        </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Thursday :)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Tut <br>1:00
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9959600890" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>3:30
+                                </a>
 
-                    </nav>
-                </div>
-                <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
-                    <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">It's Saturday :D</h2>
-                    <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-                        <a href="https://tiet.zoom.us/my/mee14" target="_blank" class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
-                    Mech Tut<br>9:40
-                        </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Friday :/</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/csed22" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc2" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Practical <br>1:00
+                                </a>
 
-                    </nav>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">It's Saturday :D</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/mee02" target="_blank" class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Tut<br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc4" target="_blank" class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Tut<br>9:40
+                                </a>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div id="co12" class="collapse py-10" data-parent="#accordion">
+                    <h2 class="text-2xl font-medium text-center title-font">COE12</h2>
+                    <div class="flex flex-wrap -m-4 p-1">
+
+                        <div id="demo" class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Monday again!</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Mech Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Env Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Tut <br>5:10
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Tuesday (The Worst)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied4" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed17" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Practical <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Wednesday :(</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed13" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed19" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Practical <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Thursday :)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom3" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Tut <br>1:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9959600890" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Friday :/</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/csed22" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc2" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Practical <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">It's Saturday :D</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/mee13" target="_blank" class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Tut<br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Tut<br>9:40
+                                </a>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div id="co13" class="collapse py-10" data-parent="#accordion">
+                    <h2 class="text-2xl font-medium text-center title-font">COE13</h2>
+                    <div class="flex flex-wrap -m-4 p-1">
+
+                        <div id="demo" class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Monday again!</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Mech Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Env Lecture <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Tuesday (The Worst)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied4" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed17" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6576855191" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Practical <br>1:00
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Tut <br>5:10
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Wednesday :(</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed13" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed34" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Practical <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Tut <br>5:10
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Thursday :)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9959600890" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Friday :/</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/csed22" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc4" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Practical <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">It's Saturday :D</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/tietsom3" target="_blank" class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Tut<br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/mee02" target="_blank" class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Tut<br>9:40
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div id="co14" class="collapse py-10" data-parent="#accordion">
+                    <h2 class="text-2xl font-medium text-center title-font">COE14</h2>
+                    <div class="flex flex-wrap -m-4 p-1">
+                        <div id="demo" class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Monday again!</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Mech Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Env Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Maths Tut <br>4:20
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Tuesday (The Worst)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied4" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed17" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6576855191" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Practical <br>1:00
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3414991738" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Tut <br>5:10
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Wednesday :(</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed13" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed16" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Practical <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Tut <br>5:10
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Thursday :)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9959600890" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Friday :/</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/csed22" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc4" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Practical <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">It's Saturday :D</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/mee14" target="_blank" class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Tut<br>9:40
+                                </a>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div id="co15" class="collapse py-10" data-parent="#accordion">
+                    <h2 class="text-2xl font-medium text-center title-font">COE15</h2>
+                    <div class="flex flex-wrap -m-4 p-1">
+
+                        <div id="demo" class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Monday again!</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Mech Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Env Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Tut <br>4:20
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Tuesday (The Worst)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied4" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed17" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Practical <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Wednesday :(</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed13" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9456904911" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Practical <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Tut <br>5:10
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Thursday :)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9959600890" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/mee11" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Tut <br>4:20
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Friday :/</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/csed22" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc4" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Tut <br>1:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed24" target="_blank" class="flex  mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Practical <br>2:40
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">It's Saturday :D</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div id="co16" class="collapse py-10" data-parent="#accordion">
+                    <h2 class="text-2xl font-medium text-center title-font">COE16</h2>
+                    <div class="flex flex-wrap -m-4 p-1">
+
+                        <div id="demo" class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Monday again!</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Mech Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Env Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Tut <br>4:20
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Tuesday (The Worst)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+                                <a href="https://tiet.zoom.us/my/cied4" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed17" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1" target="_blank" class="flex  w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc2" target=" _blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Practical <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Wednesday :(</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed13 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9456904911 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Practical <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Tut <br>5:10
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Thursday :)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/tietsom2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9959600890 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/mee20 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mechanics Tut<br>4:20
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Friday :/</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/csed22 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Tut <br>1:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed22 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Practical <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">It's Saturday :D</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div id="co17" class="collapse py-10 " data-parent="#accordion">
+                    <h2 class="text-2xl font-medium text-center title-font ">COE17</h2>
+                    <div class="flex flex-wrap -m-4 p-1 ">
+
+                        <div id="demo " class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Monday again!</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/cied2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Mech Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Env Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom5" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Maths Tut <br>4:20
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Tuesday (The Worst)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/cied4 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed17 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc3" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Practical <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Wednesday :(</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed13 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/8473779133" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Practical <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3414991738" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Tut <br>5:10
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Thursday :)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/tietsom2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9959600890 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc3" target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Tut<br>4:20
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Friday :/</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/csed22 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/mee11" target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Tut <br>1:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed25" target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Practical <br>2:40
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">It's Saturday :D</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div id="co18" class="collapse py-10 " data-parent="#accordion">
+                    <h2 class="text-2xl font-medium text-center title-font ">COE18</h2>
+                    <div class="flex flex-wrap -m-4 p-1 ">
+                        <div id="demo " class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Monday again!</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/cied2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Mech Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Env Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed10" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Comp Practical<br>4:20
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Tuesday (The Worst)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/cied4 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed17 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc3" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Practical <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Wednesday :(</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed13 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/8473779133" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Practical <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom9" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Tut <br>5:10
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Thursday :)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/tietsom2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/scbc5" target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Tut <br>2:40
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9959600890 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>3:30
+                                </a>
+
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Friday :/</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/csed22 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/j/8473779133" target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Tut <br>2:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/mee11" target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Tut <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">It's Saturday :D</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+
+
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="co19" class="collapse py-10 " data-parent="#accordion">
+                    <h2 class="text-2xl font-medium text-center title-font ">COE19</h2>
+                    <div class="flex flex-wrap -m-4 p-1 ">
+
+                        <div id="demo " class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Monday again!</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/cied2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Mech Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Env Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed22" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                   Comp Practical<br>4:20
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Tuesday (The Worst)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/cied4 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed17 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2" target=" _blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Tut <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Wednesday :(</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed13 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Practical <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Thursday :)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/tietsom2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9959600890 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/mee20 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mechanic Tut<br>4:20
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Friday :/</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/csed22 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Tut <br>2:40
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Practical <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">It's Saturday :D</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/scbc4 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Tut<br>10:30
+                                </a>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div id="co20" class="collapse py-10 " data-parent="#accordion">
+                    <h2 class="text-2xl font-medium text-center title-font ">COE20</h2>
+                    <div class="flex flex-wrap -m-4 p-1 ">
+
+                        <div id="demo " class=" p-5 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Monday again!</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/cied2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Mech Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6394178395 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    EE Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Env Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed24" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                                    Comp Practical<br>4:20
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Tuesday (The Worst)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/cied4 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed17 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom3" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Tut <br>1:00
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Wednesday :(</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/ssee1 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Env Lecture <br>10:30
+                                </a>
+                                <a href="https://tiet.zoom.us/my/csed13 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc2" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Practical <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Thursday :)</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/tietsom2 " target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>11:20
+                                </a>
+                                <a href="https://tiet.zoom.us/my/scbc5 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Lecture <br>12:10
+                                </a>
+                                <a href="https://tiet.zoom.us/j/9959600890 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>3:30
+                                </a>
+                                <a href="https://tiet.zoom.us/j/mee05" target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Mech Tut <br>4:20
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Friday :/</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/csed22 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Comp Lecture <br>8:00
+                                </a>
+                                <a href="https://tiet.zoom.us/my/tietsom6 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Maths Lecture <br>8:50
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760 " target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Lecture <br>9:40
+                                </a>
+                                <a href="https://tiet.zoom.us/j/6576855191" target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Tut <br>2:40
+                                </a>
+                                <a href="https://tiet.zoom.us/j/3528379760" target="_blank " class="flex mt-1 w-40 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            EE Prac <br>3:30
+                                </a>
+
+                            </nav>
+                        </div>
+                        <div class="p-4 lg:w-1/7 sm:w-1/6 w-full mb-10 ">
+                            <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">It's Saturday :D</h2>
+                            <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5 ">
+                                <a href="https://tiet.zoom.us/my/scbc5" target="_blank " class="flex w-40 mt-1 text-white bg-indigo-500 border-0 px-3 focus:outline-none hover:bg-indigo-600 rounded ">
+                            Chem Tut<br>10:30
+                                </a>
+
+                            </nav>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button> -->
+
+            <p>DM me for any changes </p>
         </div>
     </section>
 
-    <footer class="text-gray-600 body-font bg-gray-800">
-        <div class="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col">
-            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                <img width="60px" src="/t14.PNG" alt="">
+    <footer class="text-gray-600 body-font bg-gray-800 ">
+        <div class="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col ">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900 ">
+                <img width="60px " src="/t14.PNG " alt=" ">
 
             </a>
-            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© made with ❤
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 ">© made with ❤
             </p>
-            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-          <a href="https://www.instagram.com/zsahildhillon" target="_blank" class="ml-3 text-gray-500">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start ">
+          <a href="https://www.instagram.com/zsahildhillon " target="_blank " class="ml-3 text-gray-500 ">
+            <svg fill="none " stroke="currentColor " stroke-linecap="round " stroke-linejoin="round " stroke-width="2 " class="w-6 h-6 " viewBox="0 0 24 24 ">
+              <rect width="20 " height="20 " x="2 " y="2 " rx="5 " ry="5 "></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01 "></path>
             </svg>
           </a>
-          <a href="https://github.com/Sahil-Dhillon" target="_blank" class="ml-3 text-gray-500 fa fa-github" style="font-size:26px">
-             
-            <!-- <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
-              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-              <circle cx="4" cy="4" r="2" stroke="none"></circle>
-            </svg> -->
-          </a>
-          <a href="https://wa.me/917082599140" target="_blank" class="ml-3 text-gray-500 fa fa-whatsapp" style="font-size:26px"></a> 
+          
+          <a href="https://wa.me/917082599140 " target="_blank " class="ml-3 text-gray-500 fa fa-whatsapp " style="font-size:26px "></a> 
         </span>
         </div>
     </footer>
